@@ -65,9 +65,9 @@ void PifaceIOHandler::ReadMeasurements(IDataObserver* apObserver)
 	}
 	
 	// read back a simulated an in value
-	
+	TimeTransaction tx2(apObserver);
 	simAnIn = generateSimAnIn(SIMTYPE1);
-	tx.Update(simAnIn, 0);
+	tx2.Update(simAnIn, 0);
 }
 
 CommandStatus PifaceIOHandler::Select(const ControlRelayOutputBlock& arCommand, size_t aIndex)
