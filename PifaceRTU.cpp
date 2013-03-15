@@ -23,8 +23,9 @@ int main(int argc, char* argv[])
 	DeviceTemplate device(4, 1, 0, 0, 0);
 	stackConfig.device = device;
 
-	// just to be interesting, send timestamped binary events by default
+	// just to be interesting, send timestamped events by default
 	stackConfig.slave.mEventBinary = EBR_GROUP2_VAR2;
+	stackConfig.slave.mEventAnalog = EAR_GROUP32_VAR3;
 
 	auto pOutstation = pServer->AddOutstation("outstation", LOG_LEVEL, &ioHandler, stackConfig);
 	auto pDataObserver = pOutstation->GetDataObserver();
