@@ -1,4 +1,3 @@
-
 #include "PifaceIOHandler.h"
 
 extern "C" {
@@ -9,6 +8,7 @@ extern "C" {
 
 #include <iostream>
 #include <chrono>
+#include <stdlib.h>
 
 using namespace opendnp3;
 
@@ -63,6 +63,11 @@ void PifaceIOHandler::ReadMeasurements(IDataObserver* apObserver)
 		tx.Update(Binary(isSwitchOn(data, 2), BQ_ONLINE), 2);
 		tx.Update(Binary(isSwitchOn(data, 3), BQ_ONLINE), 3);
 	}
+	
+	// read back a simulated an in value
+	
+	simAnIn = generateSimAnIn(SIMTYPE1);
+	tx.Update(simAnIn, 0);
 }
 
 CommandStatus PifaceIOHandler::Select(const ControlRelayOutputBlock& arCommand, size_t aIndex)
@@ -83,3 +88,12 @@ CommandStatus PifaceIOHandler::DirectOperate(const ControlRelayOutputBlock& arCo
 	if(validation == CS_SUCCESS) DoOperate(arCommand, static_cast<char>(aIndex+1));
 	return validation;
 }
+
+
+float PifaceIOHandler::generateSimAnIn(int simType)
+{
+	// initially an idiot random signal generator
+	return rand() % 100 - 50;         // in the range +/- 50
+	
+}
+
