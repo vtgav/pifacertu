@@ -6,7 +6,7 @@
 
 using namespace opendnp3;
 
-#DEFINE SIMTYPE 1
+#define SIMTYPE 1
 
 class PifaceIOHandler : public opendnp3::ICommandHandler
 {
