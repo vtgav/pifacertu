@@ -1,4 +1,3 @@
-
 #ifndef __PIFACE_IO_HANDLER_H_
 #define __PIFACE_IO_HANDLER_H_
 
@@ -14,8 +13,11 @@ private:
 
 	void DoOperate(const opendnp3::ControlRelayOutputBlock& arCommand, char aIndex);
 	opendnp3::CommandStatus ValidateCROB(const opendnp3::ControlRelayOutputBlock& arCommand, size_t aIndex);
+	float generateSimAnIn(int simType);
 
 	int lastData;
+	
+	float simAnIn;
 
 	bool isSwitchOn(int data, int num);
 
