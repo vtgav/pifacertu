@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
 	auto pServer = mgr.AddTCPServer("tcpserver", LOG_LEVEL, 5000, "0.0.0.0", 20000);
 
 	SlaveStackConfig stackConfig;
-	DeviceTemplate device(4, 1, 0, 0, 0);
+	DeviceTemplate device(8, 1, 0, 0, 0);
 	stackConfig.device = device;
 
 	// just to be interesting, send timestamped events by default
