@@ -62,7 +62,10 @@ void PifaceIOHandler::ReadMeasurements(IDataObserver* apObserver)
 		tx.Update(Binary(isSwitchOn(data, 1), BQ_ONLINE), 1);
 		tx.Update(Binary(isSwitchOn(data, 2), BQ_ONLINE), 2);
 		tx.Update(Binary(isSwitchOn(data, 3), BQ_ONLINE), 3);
-	}
+		tx.Update(Binary(isSwitchOn(data, 4), BQ_ONLINE), 4);
+		tx.Update(Binary(isSwitchOn(data, 5), BQ_ONLINE), 5);
+		tx.Update(Binary(isSwitchOn(data, 6), BQ_ONLINE), 6);
+		tx.Update(Binary(isSwitchOn(data, 7), BQ_ONLINE), 7);	}
 	
 	// read back a simulated an in value
 	TimeTransaction tx2(apObserver);
