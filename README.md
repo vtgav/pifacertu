@@ -38,7 +38,9 @@ Switches 1-4 are mapped to BinaryInput indices 0-3
 | 3             | Switch4         |
 
 GDR
+
 1. Added simulated a( randmised ) analog input value on analog input 0 ( with timestamp )
+
 2. Also, extended dig inputs to cover all 8 available
 
 Enjoy!
